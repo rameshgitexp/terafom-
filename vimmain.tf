@@ -8,7 +8,7 @@ resource "aws_instance" "one" {
 ami = "ami-ami-0449c34f967dbf18a"
 instance_type = "t2.micro"
    key_name = "ManagementKeyPair.pem"
-   vpc_security_group_ids = [aws_security_group.three.id]
+   vpc_security_group_ids = [aws_security_group.bar.id]
    availability_zone = "ap-south-1"
    user_data = <<EOF
 #!/bin/bash
@@ -27,7 +27,7 @@ resource "aws_instance" "two" {
 ami = "ami-0e731c8a588258d0d"
 instance_type = "t2.micro"
    key_name = "ManagementKeyPair .pem"
-   vpc_security_group_ids = [aws_security_group.three.id]
+   vpc_security_group_ids = [aws_security_group.bar.id]
    availability_zone = "ap-south-1"
    user_data = <<EOF
 #!/bin/bash
