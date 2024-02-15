@@ -1,6 +1,6 @@
  resource "aws_elb" "bar" {
-  name                      = "basavaraju-terraform-elb"
-  availability_zones        = ["us-east-1a", "us-east-1b"]
+  name                      = "ramesh-terraform-elb"
+  availability_zones        = ["ap-south-1"]
 
   listener {
     instance_port          = 80
@@ -17,11 +17,11 @@
     interval             = 30
   }
 
-  instances                 = ["${aws_instance.one.id}","${aws_instance.two.id}"]
+  instances                 = ["${aws_instance.one.id}"]
   cross_zone_load_balancing = true
   idle_timeout              = 400
   tags = {   
-    Name = "basavaraju-tf-elb"
+    Name = "ramesh-tf-elb"
   }
 }
 
